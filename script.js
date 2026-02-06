@@ -4,58 +4,160 @@ const DEFAULT_ARTISTS = [
     id: 'hazul',
     name: 'Hazul',
     shortBio: 'Artista urbano do Porto com murais icónicos pela cidade.',
-    fullBio: 'Hazul é um dos nomes mais reconhecidos da arte urbana portuense, conhecido pelos seus traços orgânicos e figuras enigmáticas que ocupam fachadas por toda a cidade.',
-    image: 'Arte urbana/41857508151_808983d676_b.webp', // Placeholder - substituir quando tiver imagem do Hazul
+    fullBio: 'Mural no Bairro do Carvalhido realizado para a Domus Social e CM Porto, em Janeiro 2019.',
+    image: 'arteUrbana/hazul0.jpg',
   },
   {
     id: 'mr-dheo',
     name: 'Mr. Dheo',
     shortBio: 'Conhecido pelos retratos realistas e colaborações internacionais.',
     fullBio: 'Mr.Dheo é autor de vários murais de arte urbana espalhados pelo país e por vários cantos do mundo – desde a sua cidade natal, Vila Nova de Gaia, até ao Porto, Miami, São Paulo, Joanesburgo ou Dubai.',
-    image: 'Arte urbana/41857508151_808983d676_b.webp',
+    image: 'arteUrbana/mrDheo0.webp',
   },
   {
     id: 'vhils',
     name: 'Vhils',
     shortBio: 'Artista conhecido pela técnica única de remoção de camadas de paredes para criar murais.',
     fullBio: 'Alexandre Farto aka Vhils (n. 1987) desenvolveu uma linguagem visual singular com base na remoção das camadas superficiais de paredes e outros suportes através de ferramentas e técnicas não convencionais. Começou a interagir com o espaço urbano através da prática do graffiti no início da década de 2000.',
-    image: 'Arte urbana/1481082.jpg',
+    image: 'arteUrbana/vhils0.jpg',
+  },
+  {
+    id: 'pariz-one',
+    name: 'Pariz One',
+    shortBio: 'Mestre do wildstyle e visionário das letras no universo do graffiti.',
+    fullBio: 'Pariz One, um nome que ecoa no mundo do graffiti como um raio de criatividade e coragem. Nascido em 1984, é um artista audacioso, um mestre do wildstyle, e um visionário do universo das letras. A sua jornada começou em 1999, quando as paredes da cidade se tornaram o seu caderno de rascunhos e o spray a sua ferramenta de expressão.',
+    image: 'arteUrbana/parizOne.jpeg',
+  },
+  {
+    id: 'bordalo-ii',
+    name: 'Bordalo II',
+    shortBio: 'Artista que utiliza lixo e sucata para criar esculturas e murais de grande impacto visual.',
+    fullBio: 'Chapas, teclados de computador, pneus de bicicleta são alguns dos objetos escolhidos por Bordalo II para a produção das suas obras. Artur Bordalo, neto do artista plástico Real Bordalo, nasceu em 1987, em Lisboa.',
+    image: 'arteUrbana/bordalo0.jpg',
+    works: ['arteUrbana/bordalo0.jpg', 'arteUrbana/bordalo1.webp'],
+  },
+  {
+    id: 'pariz-one',
+    name: 'Pariz One',
+    shortBio: 'Artista audacioso, mestre do wildstyle e visionário do universo das letras.',
+    fullBio: 'Pariz One, um nome que ecoa no mundo do graffiti como um raio de criatividade e coragem. Nascido em 1984, é um artista audacioso, um mestre do wildstyle, e um visionário do universo das letras. A sua jornada começou em 1999, quando as paredes da cidade se tornaram o seu caderno de rascunhos e o spray a sua ferramenta de expressão.',
+    image: 'arteUrbana/parizOne.jpeg',
+  },
+  {
+    id: 'add-fuel',
+    name: 'Add Fuel',
+    shortBio: 'Artista português conhecido por padrões intrincados e reinterpretações ousadas de arte tradicional.',
+    fullBio: 'Add Fuel é o nome artístico do artista contemporâneo português Diogo Machado. Reconhecido por sua abordagem inovadora às formas de arte tradicionais, ele é conhecido por seus padrões intrincados, reinterpretações ousadas e atenção meticulosa aos detalhes, criando composições multifacetadas que unem a elegância atemporal do patrimônio à cultura visual contemporânea.',
+    image: 'arteUrbana/addFuel0.jpg',
+  },
+  {
+    id: 'ella-pitr',
+    name: 'Ella & Pitr',
+    shortBio: 'Dupla de artistas conhecida pelo projeto Papier Peintres e intervenções urbanas de grande escala.',
+    fullBio: 'Ella & Pitr formam a dupla Papier Peintres, um conceito que nasceu em 2007 a partir de um encontro aleatório enquanto ambos faziam colagens numa rua de St. Etienne. Hoje têm um atelier na mesma cidade e a rua mantém-se o seu território de expressão espontânea.',
+    image: 'arteUrbana/EllaPitr.jpg',
+  },
+  {
+    id: 'hugo-makarov',
+    name: 'Hugo Makarov',
+    shortBio: 'Artista lisboeta com percurso entre a tatuagem e a ilustração de publicidade e editorial.',
+    fullBio: 'Nascido em Lisboa em 1979 e desde cedo exposto a artes visuais como a banda desenhada e ilustração, acabou por entrar no mundo da tatuagem e ilustração de publicidade e editorial enquanto ainda estava na faculdade, actividades que conseguiu conjugar durante dez anos, trabalhando em alguns dos estúdios de tatuagens mais marcantes de Lisboa e ao mesmo tempo participando em projectos comerciais com empresas como o Continente ou a Worten.',
+    image: 'arteUrbana/makarov.jpg',
+  },
+  {
+    id: 'odeith',
+    name: 'Odeith',
+    shortBio: 'Pioneiro do graffiti em Portugal, conhecido pelas obras 3D e origens na Damaia.',
+    fullBio: 'Odeith nasceu em 1976, na Damaia. Teve pela primeira vez nas mãos uma lata de spray em meados dos anos de 1980, mas foi na década seguinte, quando o graffiti se começou a disseminar em Portugal, que teve o primeiro contacto com o movimento que se iniciava.',
+    image: 'arteUrbana/odeith.webp',
+  },
+  {
+    id: 'oaktree',
+    name: 'Oaktree',
+    shortBio: 'Ilustrador e pintor que explora emoção e adoração à Natureza através de traços energéticos.',
+    fullBio: 'Tiago de Carvalho (a.k.a. Oaktree). Ilustrador e Pintor. O seu trabalho consiste sobretudo na exploração de emoção e adoração à Natureza através de ritmo, movimento e traços energéticos.',
+    image: 'arteUrbana/Oaktree.webp',
+  },
+  {
+    id: 'mario-belem',
+    name: 'Mário Belém',
+    shortBio: 'Designer gráfico e ilustrador lisboeta que se dedica atualmente a projetos pessoais.',
+    fullBio: 'Mário Belém (Lisboa, 1977) é formado em design gráfico pelo Ar.Co. Trabalhou em diversas areas relacionadas com comunicação, mas foi como ilustrador que ganhou maior notoriedade. Recentemente deixou a sua carreira comercial para se dedicar exclusivamente à criação de projetos pessoais.',
+    image: 'arteUrbana/marioBelem.jpg',
+  },
+  {
+    id: 'miguel-brum',
+    name: 'Miguel Brum',
+    shortBio: 'Ilustrador e tatuador marcado pela cultura e vida urbana, com raízes no graffiti dos anos 90.',
+    fullBio: 'O ilustrador e tatuador Miguel Brum desde muito cedo sentiu-se atraído pela cultura e pela vida urbana. As suas primeiras incursões artísticas começaram com o graffiti na década de 1990, com a criação de murais de grande porte com assinaturas ousadas e figuras proeminentes.',
+    image: 'arteUrbana/miguelBrum.jpg',
+  },
+  {
+    id: 'pixel-pancho',
+    name: 'Pixel Pancho',
+    shortBio: 'Artista italiano conhecido pelos seus murais de robôs e personagens mecânicas com forte carga emocional.',
+    fullBio: 'O Pixel Pancho Studio foi fundado por Pixel Pancho, um artista nascido em Turim em 1984 e apresentado à cor e à forma por seu avô, que pintava ocasionalmente.',
+    image: 'arteUrbana/pixel0.png',
+  },
+  {
+    id: 'os-gemeos',
+    name: 'Os Gêmeos',
+    shortBio: 'Dupla de irmãos grafiteiros de São Paulo que ajudou a definir um estilo brasileiro de graffiti.',
+    fullBio: 'Os Gêmeos são uma dupla de irmãos grafiteiros de São Paulo, nascidos em 1974, cujos nomes reais são Otávio Pandolfo e Gustavo Pandolfo. Formados em desenho de comunicação pela Escola Técnica Estadual Carlos de Campos, começaram a pintar grafites em 1990 no bairro em que cresceram, o Cambuci, e gradualmente tornaram-se uma das influências mais importantes na cena paulistana, ajudando a definir um estilo brasileiro de grafite.',
+    image: 'arteUrbana/gemeos.webp',
   },
   {
     id: 'other',
     name: 'Outro Artista',
     shortBio: 'Exemplo de artista para o protótipo da aplicação.',
     fullBio: 'Este é um artista de exemplo usado para preencher o layout da aplicação PAP, podendo ser substituído por informação real mais tarde.',
-    image: 'Arte urbana/41857508151_808983d676_b.webp', // Placeholder - substituir quando tiver imagem
+    image: 'arteUrbana/mrDheo0.webp', // Placeholder - substituir quando tiver imagem
   },
 ];
 
-// Carregar artistas do localStorage ou usar os padrão
-function getArtists() {
+// Carregar artistas - tenta JSON do servidor primeiro, depois localStorage, depois padrão
+async function loadArtists() {
+  try {
+    // Tentar carregar do ficheiro JSON no repositório
+    const response = await fetch('data/artists.json');
+    if (response.ok) {
+      const artists = await response.json();
+      if (artists && Array.isArray(artists) && artists.length > 0) {
+        // Guardar também no localStorage como cache
+        localStorage.setItem('street_art_artists', JSON.stringify(artists));
+        return artists;
+      }
+    }
+  } catch (e) {
+    // Ficheiro não existe ou erro ao carregar - continuar para localStorage
+    console.log('Ficheiro data/artists.json não encontrado, usando localStorage ou dados padrão');
+  }
+
+  // Tentar localStorage
   const STORAGE_KEY = 'street_art_artists';
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored) {
     try {
       const artists = JSON.parse(stored);
-      if (artists && artists.length > 0) {
+      if (artists && Array.isArray(artists) && artists.length > 0) {
         return artists;
       }
     } catch (e) {
       console.error('Erro ao carregar artistas do localStorage:', e);
     }
   }
+  
+  // Usar dados padrão
   return DEFAULT_ARTISTS;
 }
 
-// Variável global com os artistas atuais
-let ARTISTS = getArtists();
+// Variável global com os artistas atuais (será preenchida na inicialização)
+let ARTISTS = DEFAULT_ARTISTS;
 
 // Dados das Imagens
 const IMAGES = [
-  { id: '1', artist: 'Hazul', title: 'Mural Ribeira' },
   { id: '2', artist: 'Mr. Dheo', title: 'Retrato Urbano' },
   { id: '3', artist: 'Outro Artista', title: 'Abstrato Colorido' },
-  { id: '4', artist: 'Hazul', title: 'Figura Orgânica' },
 ];
 
 // Dados dos Roteiros
@@ -85,9 +187,9 @@ let currentScreen = 'homepage';
 let currentArtistId = null;
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', () => {
-    // Recarregar artistas do localStorage
-    ARTISTS = getArtists();
+document.addEventListener('DOMContentLoaded', async () => {
+    // Carregar artistas (tenta JSON, depois localStorage, depois padrão)
+    ARTISTS = await loadArtists();
     
     initializeNavigation();
     renderArtists();
@@ -95,21 +197,21 @@ document.addEventListener('DOMContentLoaded', () => {
     renderRoutes();
     
     // Listener para atualizar quando os dados mudarem (quando voltar do backoffice)
-    window.addEventListener('storage', (e) => {
+    window.addEventListener('storage', async (e) => {
         if (e.key === 'street_art_artists') {
-            ARTISTS = getArtists();
+            ARTISTS = await loadArtists();
             renderArtists();
         }
     });
     
     // Também verificar mudanças no mesmo tab (para quando editar no mesmo navegador)
-    setInterval(() => {
-        const newArtists = getArtists();
+    setInterval(async () => {
+        const newArtists = await loadArtists();
         if (JSON.stringify(newArtists) !== JSON.stringify(ARTISTS)) {
             ARTISTS = newArtists;
             renderArtists();
         }
-    }, 1000);
+    }, 2000);
 });
 
 // Navegação
@@ -194,9 +296,16 @@ function showArtistDetail(artistId) {
         <div class="artist-works-section">
             <h2 class="artist-works-title">Obras</h2>
             <div class="artist-works-list">
-                <div class="work-placeholder">OBRA 1</div>
-                <div class="work-placeholder">OBRA 2</div>
-                <div class="work-placeholder">OBRA 3</div>
+                ${artist.works && artist.works.length > 0 
+                    ? artist.works.map(work => `
+                        <img src="${work}" alt="Obra de ${artist.name}" class="work-image" onerror="this.style.display='none';">
+                    `).join('')
+                    : `
+                        <div class="work-placeholder">OBRA 1</div>
+                        <div class="work-placeholder">OBRA 2</div>
+                        <div class="work-placeholder">OBRA 3</div>
+                    `
+                }
             </div>
         </div>
         <button class="btn-voltar" onclick="backToArtists()">Voltar aos artistas</button>

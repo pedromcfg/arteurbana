@@ -51,17 +51,11 @@ body {
     padding: 16px;
 }
 
-.logo-placeholder {
+.logo-image {
     width: 256px;
     height: 256px;
-    background-color: #F3F4F6;
+    object-fit: contain;
     border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #6B7280;
 }
 
 /* Artistas - Lista */
@@ -199,6 +193,14 @@ body {
     font-weight: 600;
 }
 
+.work-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
 .btn-voltar {
     background-color: #111827;
     color: #FFFFFF;
@@ -297,32 +299,6 @@ body {
     line-height: 1.5;
 }
 
-/* Link para Backoffice */
-.backoffice-link {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    background-color: #6B7280;
-    color: #FFFFFF;
-    padding: 8px 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    z-index: 1001;
-    transition: opacity 0.2s, background-color 0.2s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.backoffice-link:hover {
-    opacity: 0.9;
-    background-color: #4B5563;
-}
-
-.backoffice-link:active {
-    opacity: 0.7;
-}
-
 /* Navbar inferior fixa */
 .bottom-navbar {
     position: fixed;
@@ -377,10 +353,6 @@ body {
         max-width: 768px;
         left: 50%;
         transform: translateX(-50%);
-    }
-    
-    .backoffice-link {
-        right: calc(50% - 384px + 16px);
     }
 }
 
