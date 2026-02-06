@@ -1,0 +1,386 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #111827;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Container principal */
+.app-container {
+    height: 100vh;
+    padding-bottom: 64px; /* Espaço para a navbar */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Screens */
+.screen {
+    display: none;
+    min-height: calc(100vh - 64px);
+}
+
+.screen.active {
+    display: block;
+}
+
+.screen-content {
+    padding: 16px;
+}
+
+.screen-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+/* Homepage */
+.homepage-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px);
+    padding: 16px;
+}
+
+.logo-placeholder {
+    width: 256px;
+    height: 256px;
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6B7280;
+}
+
+/* Artistas - Lista */
+.artists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.artist-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.artist-photo {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.artist-photo-placeholder {
+    width: 100%;
+    height: 160px;
+    background-color: #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+.artist-card-content {
+    padding: 16px;
+}
+
+.artist-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.artist-short-bio {
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 12px;
+}
+
+.btn-ver-mais {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-ver-mais:hover {
+    opacity: 0.9;
+}
+
+.btn-ver-mais:active {
+    opacity: 0.7;
+}
+
+/* Artistas - Detalhe */
+.artist-detail-photo-img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.artist-detail-photo {
+    width: 100%;
+    height: 256px;
+    background-color: #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6B7280;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.artist-detail-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.artist-full-bio {
+    font-size: 16px;
+    color: #6B7280;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.artist-works-section {
+    margin-bottom: 24px;
+}
+
+.artist-works-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.artist-works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.work-placeholder {
+    width: 100%;
+    height: 160px;
+    background-color: #F3F4F6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+.btn-voltar {
+    background-color: #111827;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.2s;
+}
+
+.btn-voltar:hover {
+    opacity: 0.9;
+}
+
+.btn-voltar:active {
+    opacity: 0.7;
+}
+
+/* Imagens (Galeria) */
+.images-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.image-item {
+    margin-bottom: 16px;
+}
+
+.image-artist-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 192px;
+    background-color: #F3F4F6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+/* Roteiros */
+.routes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.route-item {
+    margin-bottom: 16px;
+}
+
+.route-map-placeholder {
+    width: 100%;
+    height: 160px;
+    background-color: #F3F4F6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6B7280;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-bottom: 12px;
+}
+
+.route-map-placeholder:hover {
+    opacity: 0.9;
+}
+
+.route-map-placeholder:active {
+    opacity: 0.7;
+}
+
+.route-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.route-description {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.5;
+}
+
+/* Link para Backoffice */
+.backoffice-link {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background-color: #6B7280;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 1001;
+    transition: opacity 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.backoffice-link:hover {
+    opacity: 0.9;
+    background-color: #4B5563;
+}
+
+.backoffice-link:active {
+    opacity: 0.7;
+}
+
+/* Navbar inferior fixa */
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    transition: color 0.2s;
+}
+
+.nav-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9CA3AF;
+    margin-top: 4px;
+}
+
+.nav-item.active .nav-label {
+    color: #111827;
+}
+
+.nav-item:hover .nav-label {
+    color: #111827;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    
+    .bottom-navbar {
+        max-width: 768px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .backoffice-link {
+        right: calc(50% - 384px + 16px);
+    }
+}
+

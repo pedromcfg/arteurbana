@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Art Stories: Porto a Cores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Link para Backoffice -->
+    <a href="backoffice.html" class="backoffice-link" title="Acessar Backoffice">
+        ⚙️ Admin
+    </a>
+
+    <!-- Container principal com padding para a navbar -->
+    <div class="app-container">
+        <!-- Homepage -->
+        <div id="homepage" class="screen active">
+            <div class="homepage-content">
+                <div class="logo-placeholder">
+                    LOGO
+                </div>
+            </div>
+        </div>
+
+        <!-- Artistas - Lista -->
+        <div id="artists-list" class="screen">
+            <div class="screen-content">
+                <h1 class="screen-title">Artistas</h1>
+                <div id="artists-container" class="artists-list">
+                    <!-- Os artistas serão inseridos via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Artistas - Detalhe -->
+        <div id="artist-detail" class="screen">
+            <div class="screen-content">
+                <div id="artist-detail-content">
+                    <!-- Conteúdo do artista será inserido via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagens (Galeria) -->
+        <div id="images" class="screen">
+            <div class="screen-content">
+                <h1 class="screen-title">Imagens</h1>
+                <div id="images-container" class="images-gallery">
+                    <!-- As imagens serão inseridas via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Roteiros -->
+        <div id="routes" class="screen">
+            <div class="screen-content">
+                <h1 class="screen-title">Roteiros</h1>
+                <div id="routes-container" class="routes-list">
+                    <!-- Os roteiros serão inseridos via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar inferior fixa -->
+    <nav class="bottom-navbar">
+        <button class="nav-item active" data-screen="homepage">
+            <span class="nav-label">Homepage</span>
+        </button>
+        <button class="nav-item" data-screen="artists-list">
+            <span class="nav-label">Artistas</span>
+        </button>
+        <button class="nav-item" data-screen="images">
+            <span class="nav-label">Imagens</span>
+        </button>
+        <button class="nav-item" data-screen="routes">
+            <span class="nav-label">Roteiros</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

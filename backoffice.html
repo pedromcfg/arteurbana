@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice - Street Art Stories</title>
+    <link rel="stylesheet" href="backoffice.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <h1>Backoffice</h1>
+            <p class="subtitle">Street Art Stories: Porto a Cores</p>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required autofocus>
+                </div>
+                <button type="submit" class="btn-primary">Entrar</button>
+                <p id="login-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela Principal do Backoffice -->
+    <div id="main-screen" class="screen">
+        <div class="backoffice-container">
+            <header class="backoffice-header">
+                <h1>Gestão de Artistas</h1>
+                <button class="btn-logout" onclick="logout()">Sair</button>
+            </header>
+
+            <!-- Formulário de Inserção/Edição -->
+            <div class="form-section">
+                <h2 id="form-title">Adicionar Novo Artista</h2>
+                <form id="artist-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="artist-name">Nome do Artista:</label>
+                        <input type="text" id="artist-name" name="name" required placeholder="Ex: Vhils">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="artist-short-bio">Biografia Curta:</label>
+                        <textarea id="artist-short-bio" name="shortBio" rows="2" required placeholder="Breve descrição para o card..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="artist-full-bio">Biografia Completa:</label>
+                        <textarea id="artist-full-bio" name="fullBio" rows="5" required placeholder="Descrição completa do artista..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="artist-image">Nome do Ficheiro de Imagem:</label>
+                        <div class="image-input-group">
+                            <input type="text" id="artist-image" name="image" required placeholder="Ex: 1481082.jpg" readonly>
+                            <span class="image-hint">Será gerado automaticamente: <span id="image-preview"></span></span>
+                        </div>
+                        <p class="help-text">O nome será gerado automaticamente a partir do nome do artista (minúsculas, sem espaços). Certifique-se de que o ficheiro existe na pasta "Arte urbana".</p>
+                    </div>
+
+                    <input type="hidden" id="artist-id" name="id">
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="submit-btn">Adicionar Artista</button>
+                        <button type="button" class="btn-secondary" id="cancel-btn" onclick="resetForm()" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de Artistas -->
+            <div class="artists-section">
+                <h2>Artistas Cadastrados</h2>
+                <div id="artists-list" class="artists-list">
+                    <!-- Lista será preenchida via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="backoffice.js"></script>
+</body>
+</html>
+
