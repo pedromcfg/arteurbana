@@ -201,6 +201,58 @@ body {
     display: block;
 }
 
+/* Modal de imagem (zoom) */
+.image-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 16px;
+}
+
+.image-modal-overlay.active {
+    display: flex;
+}
+
+.image-modal-inner {
+    background-color: #111827;
+    border-radius: 12px;
+    padding: 12px;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-modal-inner img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 8px;
+    object-fit: contain;
+    background-color: #000;
+}
+
+.image-modal-caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #E5E7EB;
+    text-align: center;
+}
+
+.image-modal-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #F9FAFB;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
 .btn-voltar {
     background-color: #111827;
     color: #FFFFFF;
@@ -328,10 +380,10 @@ body {
 }
 
 .nav-label {
-    font-size: 12px;
+    font-size: 22px;
     font-weight: 600;
     color: #9CA3AF;
-    margin-top: 4px;
+    margin-top: 0;
 }
 
 .nav-item.active .nav-label {

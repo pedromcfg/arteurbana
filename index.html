@@ -59,18 +59,27 @@
     <!-- Navbar inferior fixa -->
     <nav class="bottom-navbar">
         <button class="nav-item active" data-screen="homepage">
-            <span class="nav-label">Homepage</span>
+            <span class="nav-label">🏠</span>
         </button>
         <button class="nav-item" data-screen="artists-list">
-            <span class="nav-label">Artistas</span>
+            <span class="nav-label">🎨</span>
         </button>
         <button class="nav-item" data-screen="images">
-            <span class="nav-label">Imagens</span>
+            <span class="nav-label">🖼️</span>
         </button>
         <button class="nav-item" data-screen="routes">
-            <span class="nav-label">Roteiros</span>
+            <span class="nav-label">🗺️</span>
         </button>
     </nav>
+
+    <!-- Modal de imagem para zoom -->
+    <div id="image-modal" class="image-modal-overlay">
+        <div class="image-modal-inner">
+            <button class="image-modal-close" onclick="closeImageModal()">&times;</button>
+            <img id="image-modal-img" src="" alt="Imagem ampliada">
+            <p id="image-modal-caption"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

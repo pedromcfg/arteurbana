@@ -6,6 +6,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Artista urbano do Porto com murais icónicos pela cidade.',
     fullBio: 'Mural no Bairro do Carvalhido realizado para a Domus Social e CM Porto, em Janeiro 2019.',
     image: 'arteUrbana/hazul0.jpg',
+    works: ['arteUrbana/hazul0.jpg'],
   },
   {
     id: 'mr-dheo',
@@ -13,6 +14,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Conhecido pelos retratos realistas e colaborações internacionais.',
     fullBio: 'Mr.Dheo é autor de vários murais de arte urbana espalhados pelo país e por vários cantos do mundo – desde a sua cidade natal, Vila Nova de Gaia, até ao Porto, Miami, São Paulo, Joanesburgo ou Dubai.',
     image: 'arteUrbana/mrDheo0.webp',
+    works: ['arteUrbana/mrDheo0.webp'],
   },
   {
     id: 'vhils',
@@ -20,6 +22,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Artista conhecido pela técnica única de remoção de camadas de paredes para criar murais.',
     fullBio: 'Alexandre Farto aka Vhils (n. 1987) desenvolveu uma linguagem visual singular com base na remoção das camadas superficiais de paredes e outros suportes através de ferramentas e técnicas não convencionais. Começou a interagir com o espaço urbano através da prática do graffiti no início da década de 2000.',
     image: 'arteUrbana/vhils0.jpg',
+    works: ['arteUrbana/vhils0.jpg'],
   },
   {
     id: 'pariz-one',
@@ -27,6 +30,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Mestre do wildstyle e visionário das letras no universo do graffiti.',
     fullBio: 'Pariz One, um nome que ecoa no mundo do graffiti como um raio de criatividade e coragem. Nascido em 1984, é um artista audacioso, um mestre do wildstyle, e um visionário do universo das letras. A sua jornada começou em 1999, quando as paredes da cidade se tornaram o seu caderno de rascunhos e o spray a sua ferramenta de expressão.',
     image: 'arteUrbana/parizOne.jpeg',
+    works: ['arteUrbana/parizOne.jpeg'],
   },
   {
     id: 'bordalo-ii',
@@ -49,6 +53,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Artista português conhecido por padrões intrincados e reinterpretações ousadas de arte tradicional.',
     fullBio: 'Add Fuel é o nome artístico do artista contemporâneo português Diogo Machado. Reconhecido por sua abordagem inovadora às formas de arte tradicionais, ele é conhecido por seus padrões intrincados, reinterpretações ousadas e atenção meticulosa aos detalhes, criando composições multifacetadas que unem a elegância atemporal do patrimônio à cultura visual contemporânea.',
     image: 'arteUrbana/addFuel0.jpg',
+    works: ['arteUrbana/addFuel0.jpg'],
   },
   {
     id: 'ella-pitr',
@@ -56,6 +61,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Dupla de artistas conhecida pelo projeto Papier Peintres e intervenções urbanas de grande escala.',
     fullBio: 'Ella & Pitr formam a dupla Papier Peintres, um conceito que nasceu em 2007 a partir de um encontro aleatório enquanto ambos faziam colagens numa rua de St. Etienne. Hoje têm um atelier na mesma cidade e a rua mantém-se o seu território de expressão espontânea.',
     image: 'arteUrbana/EllaPitr.jpg',
+    works: ['arteUrbana/EllaPitr.jpg'],
   },
   {
     id: 'hugo-makarov',
@@ -63,6 +69,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Artista lisboeta com percurso entre a tatuagem e a ilustração de publicidade e editorial.',
     fullBio: 'Nascido em Lisboa em 1979 e desde cedo exposto a artes visuais como a banda desenhada e ilustração, acabou por entrar no mundo da tatuagem e ilustração de publicidade e editorial enquanto ainda estava na faculdade, actividades que conseguiu conjugar durante dez anos, trabalhando em alguns dos estúdios de tatuagens mais marcantes de Lisboa e ao mesmo tempo participando em projectos comerciais com empresas como o Continente ou a Worten.',
     image: 'arteUrbana/makarov.jpg',
+    works: ['arteUrbana/makarov.jpg'],
   },
   {
     id: 'odeith',
@@ -70,6 +77,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Pioneiro do graffiti em Portugal, conhecido pelas obras 3D e origens na Damaia.',
     fullBio: 'Odeith nasceu em 1976, na Damaia. Teve pela primeira vez nas mãos uma lata de spray em meados dos anos de 1980, mas foi na década seguinte, quando o graffiti se começou a disseminar em Portugal, que teve o primeiro contacto com o movimento que se iniciava.',
     image: 'arteUrbana/odeith.webp',
+    works: ['arteUrbana/odeith.webp'],
   },
   {
     id: 'oaktree',
@@ -77,6 +85,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Ilustrador e pintor que explora emoção e adoração à Natureza através de traços energéticos.',
     fullBio: 'Tiago de Carvalho (a.k.a. Oaktree). Ilustrador e Pintor. O seu trabalho consiste sobretudo na exploração de emoção e adoração à Natureza através de ritmo, movimento e traços energéticos.',
     image: 'arteUrbana/Oaktree.webp',
+    works: ['arteUrbana/Oaktree.webp'],
   },
   {
     id: 'mario-belem',
@@ -84,6 +93,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Designer gráfico e ilustrador lisboeta que se dedica atualmente a projetos pessoais.',
     fullBio: 'Mário Belém (Lisboa, 1977) é formado em design gráfico pelo Ar.Co. Trabalhou em diversas areas relacionadas com comunicação, mas foi como ilustrador que ganhou maior notoriedade. Recentemente deixou a sua carreira comercial para se dedicar exclusivamente à criação de projetos pessoais.',
     image: 'arteUrbana/marioBelem.jpg',
+    works: ['arteUrbana/marioBelem.jpg'],
   },
   {
     id: 'miguel-brum',
@@ -91,6 +101,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Ilustrador e tatuador marcado pela cultura e vida urbana, com raízes no graffiti dos anos 90.',
     fullBio: 'O ilustrador e tatuador Miguel Brum desde muito cedo sentiu-se atraído pela cultura e pela vida urbana. As suas primeiras incursões artísticas começaram com o graffiti na década de 1990, com a criação de murais de grande porte com assinaturas ousadas e figuras proeminentes.',
     image: 'arteUrbana/miguelBrum.jpg',
+    works: ['arteUrbana/miguelBrum.jpg'],
   },
   {
     id: 'pixel-pancho',
@@ -98,6 +109,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Artista italiano conhecido pelos seus murais de robôs e personagens mecânicas com forte carga emocional.',
     fullBio: 'O Pixel Pancho Studio foi fundado por Pixel Pancho, um artista nascido em Turim em 1984 e apresentado à cor e à forma por seu avô, que pintava ocasionalmente.',
     image: 'arteUrbana/pixel0.png',
+    works: ['arteUrbana/pixel0.png'],
   },
   {
     id: 'os-gemeos',
@@ -105,6 +117,7 @@ const DEFAULT_ARTISTS = [
     shortBio: 'Dupla de irmãos grafiteiros de São Paulo que ajudou a definir um estilo brasileiro de graffiti.',
     fullBio: 'Os Gêmeos são uma dupla de irmãos grafiteiros de São Paulo, nascidos em 1974, cujos nomes reais são Otávio Pandolfo e Gustavo Pandolfo. Formados em desenho de comunicação pela Escola Técnica Estadual Carlos de Campos, começaram a pintar grafites em 1990 no bairro em que cresceram, o Cambuci, e gradualmente tornaram-se uma das influências mais importantes na cena paulistana, ajudando a definir um estilo brasileiro de grafite.',
     image: 'arteUrbana/gemeos.webp',
+    works: ['arteUrbana/gemeos.webp'],
   },
   {
     id: 'other',
@@ -298,7 +311,7 @@ function showArtistDetail(artistId) {
             <div class="artist-works-list">
                 ${artist.works && artist.works.length > 0 
                     ? artist.works.map(work => `
-                        <img src="${work}" alt="Obra de ${artist.name}" class="work-image" onerror="this.style.display='none';">
+                        <img src="${work}" alt="Obra de ${artist.name}" class="work-image" onclick="openImageModal('${work}', 'Obra de ${artist.name}')" onerror="this.style.display='none';">
                     `).join('')
                     : `
                         <div class="work-placeholder">OBRA 1</div>
@@ -352,4 +365,48 @@ function renderRoutes() {
 function openMaps(url) {
     window.open(url, '_blank');
 }
+
+// Modal de imagem (zoom)
+function openImageModal(src, caption) {
+    const modal = document.getElementById('image-modal');
+    const img = document.getElementById('image-modal-img');
+    const captionEl = document.getElementById('image-modal-caption');
+    if (!modal || !img || !captionEl) return;
+
+    img.src = src;
+    img.alt = caption || '';
+    captionEl.textContent = caption || '';
+    modal.classList.add('active');
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('image-modal');
+    const img = document.getElementById('image-modal-img');
+    const captionEl = document.getElementById('image-modal-caption');
+    if (!modal || !img || !captionEl) return;
+
+    modal.classList.remove('active');
+    img.src = '';
+    img.alt = '';
+    captionEl.textContent = '';
+}
+
+// Fechar modal ao clicar fora da imagem
+document.addEventListener('click', (event) => {
+    const modal = document.getElementById('image-modal');
+    if (!modal) return;
+    if (!modal.classList.contains('active')) return;
+
+    const inner = modal.querySelector('.image-modal-inner');
+    if (event.target === modal && inner && !inner.contains(event.target)) {
+        closeImageModal();
+    }
+});
+
+// Fechar modal com ESC
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
 
