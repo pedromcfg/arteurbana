@@ -214,12 +214,6 @@ async function loadArtists() {
 // Variável global com os artistas atuais (será preenchida na inicialização)
 let ARTISTS = DEFAULT_ARTISTS;
 
-// Dados das Imagens
-const IMAGES = [
-  { id: '2', artist: 'Mr. Dheo', title: 'Retrato Urbano' },
-  { id: '3', artist: 'Outro Artista', title: 'Abstrato Colorido' },
-];
-
 // Dados dos Roteiros
 const ROUTES = [
   {
@@ -253,7 +247,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     initializeNavigation();
     renderArtists();
-    renderImages();
     renderRoutes();
     
     // Listener para atualizar quando os dados mudarem (quando voltar do backoffice)
@@ -378,19 +371,6 @@ function backToArtists() {
     document.getElementById('artist-detail').classList.remove('active');
     document.getElementById('artists-list').classList.add('active');
     currentArtistId = null;
-}
-
-// Renderizar Imagens
-function renderImages() {
-    const container = document.getElementById('images-container');
-    if (!container) return;
-    
-    container.innerHTML = IMAGES.map(image => `
-        <div class="image-item">
-            <div class="image-artist-name">${image.artist}</div>
-            <div class="image-placeholder">${image.title}</div>
-        </div>
-    `).join('');
 }
 
 // Renderizar Roteiros
