@@ -177,20 +177,22 @@ const DEFAULT_ARTISTS = [
 
 // Carregar artistas - tenta JSON do servidor primeiro, depois localStorage, depois padrão
 async function loadArtists() {
-  try {
-    // Tentar carregar do ficheiro JSON no repositório
-    const response = await fetch('data/artists.json');
-    if (response.ok) {
-      const artists = await response.json();
-      if (artists && Array.isArray(artists) && artists.length > 0) {
-        // Guardar também no localStorage como cache
-        localStorage.setItem('street_art_artists', JSON.stringify(artists));
-        return artists;
+  // Só tentar fetch se estiver em HTTP/HTTPS (não em file://)
+  if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+    try {
+      // Tentar carregar do ficheiro JSON no repositório
+      const response = await fetch('data/artists.json');
+      if (response.ok) {
+        const artists = await response.json();
+        if (artists && Array.isArray(artists) && artists.length > 0) {
+          // Guardar também no localStorage como cache
+          localStorage.setItem('street_art_artists', JSON.stringify(artists));
+          return artists;
+        }
       }
+    } catch (e) {
+      // Silenciar erros de CORS quando em file://
     }
-  } catch (e) {
-    // Ficheiro não existe ou erro ao carregar - continuar para localStorage
-    console.log('Ficheiro data/artists.json não encontrado, usando localStorage ou dados padrão');
   }
 
   // Tentar localStorage
@@ -220,19 +222,22 @@ const ROUTES = [
     id: 'historic',
     name: 'Roteiro Histórico',
     description: 'Passeio pelos murais mais emblemáticos do centro histórico do Porto.',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Porto%20Portugal%20street%20art',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1VuFzq-wLH5Vcl2N8ZQkuX2sd7kuA0aA',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1VuFzq-wLH5Vcl2N8ZQkuX2sd7kuA0aA',
   },
   {
     id: 'rio-douro',
     name: 'Roteiro Margem do Douro',
     description: 'Graffitis e murais junto ao rio, perfeitos para fotos ao pôr do sol.',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Ribeira%20do%20Porto%20street%20art',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1EaVS-akJqtFX9M-1ReIlPshwGy-gt04',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1EaVS-akJqtFX9M-1ReIlPshwGy-gt04',
   },
   {
     id: 'off-center',
     name: 'Roteiro Fora do Centro',
     description: 'Explora bairros menos turísticos com peças de grande escala.',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Campanha%20Porto%20street%20art',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1l6TkyqSgTdt-w53gCF4OlKmAByMHhLE',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1l6TkyqSgTdt-w53gCF4OlKmAByMHhLE',
   },
 ];
 
@@ -257,14 +262,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
     
-    // Também verificar mudanças no mesmo tab (para quando editar no mesmo navegador)
-    setInterval(async () => {
-        const newArtists = await loadArtists();
-        if (JSON.stringify(newArtists) !== JSON.stringify(ARTISTS)) {
-            ARTISTS = newArtists;
-            renderArtists();
-        }
-    }, 2000);
+    // Também verificar mudanças no mesmo tab (apenas se estiver em HTTP/HTTPS)
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        setInterval(async () => {
+            const newArtists = await loadArtists();
+            if (JSON.stringify(newArtists) !== JSON.stringify(ARTISTS)) {
+                ARTISTS = newArtists;
+                renderArtists();
+            }
+        }, 5000); // Verificar a cada 5 segundos em vez de 2
+    }
 });
 
 // Navegação
@@ -380,8 +387,21 @@ function renderRoutes() {
     
     container.innerHTML = ROUTES.map(route => `
         <div class="route-item">
-            <div class="route-map-placeholder" onclick="openMaps('${route.mapsUrl}')">
-                MAPA
+            <div class="route-map-wrapper">
+                <iframe 
+                    src="${route.iframeSrc}" 
+                    class="route-map-iframe" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                </iframe>
+                <div class="route-map-fallback" style="display: none;" onclick="openRouteMap('${route.mapUrl}')">
+                    <div class="route-map-placeholder">
+                        <div class="map-icon">🗺️</div>
+                        <p class="map-text">Clique para ver o mapa</p>
+                    </div>
+                </div>
             </div>
             <h2 class="route-name">${route.name}</h2>
             <p class="route-description">${route.description}</p>
@@ -389,7 +409,7 @@ function renderRoutes() {
     `).join('');
 }
 
-function openMaps(url) {
+function openRouteMap(url) {
     window.open(url, '_blank');
 }
 
