@@ -67,13 +67,6 @@ const DEFAULT_ARTISTS = [
     ],
   },
   {
-    id: 'pariz-one',
-    name: 'Pariz One',
-    shortBio: 'Artista audacioso, mestre do wildstyle e visionário do universo das letras.',
-    fullBio: 'Pariz One, um nome que ecoa no mundo do graffiti como um raio de criatividade e coragem. Nascido em 1984, é um artista audacioso, um mestre do wildstyle, e um visionário do universo das letras. A sua jornada começou em 1999, quando as paredes da cidade se tornaram o seu caderno de rascunhos e o spray a sua ferramenta de expressão.',
-    image: 'arteUrbana/parizOne.jpeg',
-  },
-  {
     id: 'add-fuel',
     name: 'Add Fuel',
     shortBio: 'Artista português conhecido por padrões intrincados e reinterpretações ousadas de arte tradicional.',
@@ -222,8 +215,8 @@ const ROUTES = [
     id: 'historic',
     name: 'Roteiro Histórico',
     description: 'Passeio pelos murais mais emblemáticos do centro histórico do Porto.',
-    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1VuFzq-wLH5Vcl2N8ZQkuX2sd7kuA0aA',
-    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1VuFzq-wLH5Vcl2N8ZQkuX2sd7kuA0aA',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1O_Qg1si7jppMSm-A46Gi0K0NaDwS9ag&ehbc=2E312F',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1O_Qg1si7jppMSm-A46Gi0K0NaDwS9ag&ehbc=2E312F',
   },
   {
     id: 'rio-douro',
