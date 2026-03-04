@@ -168,6 +168,24 @@ const DEFAULT_ARTISTS = [
   },
 ];
 
+// Template de eventos (será preenchido mais tarde)
+const EVENTS = [
+  {
+    id: 'evento-1',
+    title: 'Workshop de Graffiti',
+    date: 'Data a definir',
+    location: 'Local a definir',
+    image: null, // substituir por caminho da imagem mais tarde
+  },
+  {
+    id: 'evento-2',
+    title: 'Conversas com Artistas Urbanos',
+    date: 'Data a definir',
+    location: 'Local a definir',
+    image: null,
+  },
+];
+
 // Carregar artistas - tenta JSON do servidor primeiro, depois localStorage, depois padrão
 async function loadArtists() {
   // Só tentar fetch se estiver em HTTP/HTTPS (não em file://)
@@ -213,21 +231,21 @@ let ARTISTS = DEFAULT_ARTISTS;
 const ROUTES = [
   {
     id: 'historic',
-    name: 'Roteiro Histórico',
+    name: 'Cores do Douro',
     description: 'Passeio pelos murais mais emblemáticos do centro histórico do Porto.',
     iframeSrc: 'https://www.google.com/maps/d/embed?mid=1O_Qg1si7jppMSm-A46Gi0K0NaDwS9ag&ehbc=2E312F',
     mapUrl: 'https://www.google.com/maps/d/viewer?mid=1O_Qg1si7jppMSm-A46Gi0K0NaDwS9ag&ehbc=2E312F',
   },
   {
     id: 'rio-douro',
-    name: 'Roteiro Margem do Douro',
+    name: 'Rota Urbana',
     description: 'Graffitis e murais junto ao rio, perfeitos para fotos ao pôr do sol.',
     iframeSrc: 'https://www.google.com/maps/d/embed?mid=1EaVS-akJqtFX9M-1ReIlPshwGy-gt04',
     mapUrl: 'https://www.google.com/maps/d/viewer?mid=1EaVS-akJqtFX9M-1ReIlPshwGy-gt04',
   },
   {
     id: 'off-center',
-    name: 'Roteiro Fora do Centro',
+    name: 'Arte Em Cada Esquina',
     description: 'Explora bairros menos turísticos com peças de grande escala.',
     iframeSrc: 'https://www.google.com/maps/d/embed?mid=1l6TkyqSgTdt-w53gCF4OlKmAByMHhLE',
     mapUrl: 'https://www.google.com/maps/d/viewer?mid=1l6TkyqSgTdt-w53gCF4OlKmAByMHhLE',
@@ -447,6 +465,55 @@ document.addEventListener('click', (event) => {
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         closeImageModal();
+        closeEventsModal();
+    }
+});
+
+// Renderizar eventos no modal
+function renderEvents() {
+    const list = document.getElementById('events-list');
+    if (!list) return;
+
+    if (!EVENTS || EVENTS.length === 0) {
+        list.innerHTML = '<p class="events-empty">Brevemente serão adicionados eventos.</p>';
+        return;
+    }
+
+    list.innerHTML = EVENTS.map(event => `
+        <div class="event-card">
+            <div class="event-image-placeholder">
+                IMAGEM<br>EVENTO
+            </div>
+            <div class="event-content">
+                <div class="event-title">${event.title}</div>
+                <div class="event-meta">${event.date} • ${event.location}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function openEventsModal() {
+    const modal = document.getElementById('events-modal');
+    if (!modal) return;
+    renderEvents();
+    modal.classList.add('active');
+}
+
+function closeEventsModal() {
+    const modal = document.getElementById('events-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+}
+
+// Fechar modal de eventos ao clicar fora
+document.addEventListener('click', (event) => {
+    const modal = document.getElementById('events-modal');
+    if (!modal) return;
+    if (!modal.classList.contains('active')) return;
+
+    const inner = modal.querySelector('.events-modal-inner');
+    if (event.target === modal && inner && !inner.contains(event.target)) {
+        closeEventsModal();
     }
 });
 

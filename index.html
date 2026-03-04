@@ -17,6 +17,44 @@
             </div>
         </div>
 
+        <!-- Técnicas de Arte Urbana -->
+        <div id="mission" class="screen">
+            <div class="screen-content">
+                <h1 class="screen-title">Técnicas de Arte Urbana</h1>
+
+                <button class="btn-eventos" onclick="openEventsModal()">Eventos</button>
+
+                <p class="mission-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+
+                <div class="mission-videos">
+                    <div class="mission-video-card">
+                        <div class="mission-video-thumb">VÍDEO 1</div>
+                        <div class="mission-video-content">
+                            <h2 class="mission-video-title">Técnica de Stencil</h2>
+                            <p class="mission-video-description">Artista a falar sobre o uso de stencil em murais urbanos.</p>
+                        </div>
+                    </div>
+                    <div class="mission-video-card">
+                        <div class="mission-video-thumb">VÍDEO 2</div>
+                        <div class="mission-video-content">
+                            <h2 class="mission-video-title">Murais em Grandes Formatos</h2>
+                            <p class="mission-video-description">Processo de criação de murais de grande escala nas fachadas.</p>
+                        </div>
+                    </div>
+                    <div class="mission-video-card">
+                        <div class="mission-video-thumb">VÍDEO 3</div>
+                        <div class="mission-video-content">
+                            <h2 class="mission-video-title">Arte Sustentável</h2>
+                            <p class="mission-video-description">Artistas a reutilizar materiais para intervenções urbanas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Artistas - Lista -->
         <div id="artists-list" class="screen">
             <div class="screen-content">
@@ -55,6 +93,9 @@
         <button class="nav-item" data-screen="artists-list">
             <img src="artistas.png" alt="Artistas" class="nav-icon">
         </button>
+        <button class="nav-item" data-screen="mission">
+            <span class="nav-emoji">🌟</span>
+        </button>
         <button class="nav-item" data-screen="routes">
             <img src="roteiros.png" alt="Roteiros" class="nav-icon">
         </button>
@@ -66,6 +107,17 @@
             <button class="image-modal-close" onclick="closeImageModal()">&times;</button>
             <img id="image-modal-img" src="" alt="Imagem ampliada">
             <p id="image-modal-caption"></p>
+        </div>
+    </div>
+
+    <!-- Modal de Eventos -->
+    <div id="events-modal" class="events-modal-overlay">
+        <div class="events-modal-inner">
+            <button class="events-modal-close" onclick="closeEventsModal()">&times;</button>
+            <h2 class="events-title">Eventos</h2>
+            <div id="events-list" class="events-list">
+                <!-- Lista de eventos será inserida via JavaScript -->
+            </div>
         </div>
     </div>
 
