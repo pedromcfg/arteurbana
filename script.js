@@ -177,47 +177,14 @@ const EVENTS = [
     title: 'Conversas com Artistas Urbanos',
     date: '18 abril 2026',
     location: 'R. de Alexandre Herculano 383, 4000-098 Porto',
-    image: null,
+    image: 'eventos/eventoPedro.jpg',
     description:
       'O evento de Arte Urbana será realizado no dia 18 de abril de 2026, na R. de Alexandre Herculano 383, 4000-098 Porto. Trata-se de uma iniciativa cultural, de pequena dimensão e de caráter educativo, organizada num espaço fechado, aberta ao público e direcionada principalmente para alunos da escola e para a comunidade local.\nA atividade tem como objetivo promover a arte urbana, contribuindo para a sensibilização do público relativamente à diferença entre arte e vandalismo. Pretende-se também aproximar artistas e comunidade, criando oportunidades de contacto direto entre os criadores e os participantes.\nDurante o evento serão realizados workshops e momentos de partilha, permitindo aos participantes conhecer melhor as técnicas e a cultura associadas à arte urbana. A iniciativa procura ainda estimular a criatividade, o pensamento crítico e a participação ativa da comunidade escolar, valorizando a expressão artística como forma de aprendizagem e de envolvimento social.',
   },
 ];
 
-// Carregar artistas - tenta JSON do servidor primeiro, depois localStorage, depois padrão
+// Carregar artistas (para esta versão usamos apenas os dados padrão)
 async function loadArtists() {
-  // Só tentar fetch se estiver em HTTP/HTTPS (não em file://)
-  if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-    try {
-      // Tentar carregar do ficheiro JSON no repositório
-      const response = await fetch('data/artists.json');
-      if (response.ok) {
-        const artists = await response.json();
-        if (artists && Array.isArray(artists) && artists.length > 0) {
-          // Guardar também no localStorage como cache
-          localStorage.setItem('street_art_artists', JSON.stringify(artists));
-          return artists;
-        }
-      }
-    } catch (e) {
-      // Silenciar erros de CORS quando em file://
-    }
-  }
-
-  // Tentar localStorage
-  const STORAGE_KEY = 'street_art_artists';
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    try {
-      const artists = JSON.parse(stored);
-      if (artists && Array.isArray(artists) && artists.length > 0) {
-        return artists;
-      }
-    } catch (e) {
-      console.error('Erro ao carregar artistas do localStorage:', e);
-    }
-  }
-  
-  // Usar dados padrão
   return DEFAULT_ARTISTS;
 }
 
@@ -283,24 +250,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderArtists();
     renderRoutes();
     
-    // Listener para atualizar quando os dados mudarem (quando voltar do backoffice)
-    window.addEventListener('storage', async (e) => {
-        if (e.key === 'street_art_artists') {
-            ARTISTS = await loadArtists();
-            renderArtists();
-        }
-    });
-    
-    // Também verificar mudanças no mesmo tab (apenas se estiver em HTTP/HTTPS)
-    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-        setInterval(async () => {
-            const newArtists = await loadArtists();
-            if (JSON.stringify(newArtists) !== JSON.stringify(ARTISTS)) {
-                ARTISTS = newArtists;
-                renderArtists();
-            }
-        }, 5000); // Verificar a cada 5 segundos em vez de 2
-    }
+    // Nesta versão estática não há backoffice nem atualizações em tempo real,
+    // por isso não precisamos de listeners adicionais.
 });
 
 // Navegação
