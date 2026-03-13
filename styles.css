@@ -51,6 +51,10 @@ body {
     color: #111827;
 }
 
+#mission .screen-title {
+    text-align: center;
+}
+
 /* Homepage */
 #homepage {
     background-image: url('fundo.png');
