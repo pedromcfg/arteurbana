@@ -159,30 +159,27 @@ const DEFAULT_ARTISTS = [
       'arteUrbana/Os Gêmeos  5.jpg',
     ],
   },
-  {
-    id: 'other',
-    name: 'Outro Artista',
-    shortBio: 'Exemplo de artista para o protótipo da aplicação.',
-    fullBio: 'Este é um artista de exemplo usado para preencher o layout da aplicação PAP, podendo ser substituído por informação real mais tarde.',
-    image: 'arteUrbana/mrDheo0.webp', // Placeholder - substituir quando tiver imagem
-  },
 ];
 
-// Template de eventos (será preenchido mais tarde)
+// Template de eventos (preenchido com conteúdo real)
 const EVENTS = [
   {
     id: 'evento-1',
-    title: 'Workshop de Graffiti',
-    date: 'Data a definir',
-    location: 'Local a definir',
-    image: null, // substituir por caminho da imagem mais tarde
+    title: 'BALUARTE 2025',
+    date: '24–26 outubro 2025',
+    location: 'Silo Auto e vários espaços do Porto',
+    image: 'eventos/workshop.jpg',
+    description:
+      'A BALUARTE 2025 transformou o Silo Auto e a cidade do Porto num grande laboratório de arte urbana, oficinas e experiências culturais. Durante os dias 24, 25 e 26 de outubro, o público teve acesso a explorar exposições, visitas guiadas, performances, DJ sets e workshops, envolvendo-se com artistas locais e internacionais em diferentes formatos.',
   },
   {
     id: 'evento-2',
     title: 'Conversas com Artistas Urbanos',
-    date: 'Data a definir',
-    location: 'Local a definir',
+    date: '18 abril 2026',
+    location: 'R. de Alexandre Herculano 383, 4000-098 Porto',
     image: null,
+    description:
+      'O evento de Arte Urbana será realizado no dia 18 de abril de 2026, na R. de Alexandre Herculano 383, 4000-098 Porto. Trata-se de uma iniciativa cultural, de pequena dimensão e de caráter educativo, organizada num espaço fechado, aberta ao público e direcionada principalmente para alunos da escola e para a comunidade local.\nA atividade tem como objetivo promover a arte urbana, contribuindo para a sensibilização do público relativamente à diferença entre arte e vandalismo. Pretende-se também aproximar artistas e comunidade, criando oportunidades de contacto direto entre os criadores e os participantes.\nDurante o evento serão realizados workshops e momentos de partilha, permitindo aos participantes conhecer melhor as técnicas e a cultura associadas à arte urbana. A iniciativa procura ainda estimular a criatividade, o pensamento crítico e a participação ativa da comunidade escolar, valorizando a expressão artística como forma de aprendizagem e de envolvimento social.',
   },
 ];
 
@@ -249,6 +246,27 @@ const ROUTES = [
     description: 'Explora bairros menos turísticos com peças de grande escala.',
     iframeSrc: 'https://www.google.com/maps/d/embed?mid=1l6TkyqSgTdt-w53gCF4OlKmAByMHhLE',
     mapUrl: 'https://www.google.com/maps/d/viewer?mid=1l6TkyqSgTdt-w53gCF4OlKmAByMHhLE',
+  },
+  {
+    id: 'hazul',
+    name: 'Roteiro Hazul',
+    description: 'Percurso dedicado aos murais de Hazul espalhados pelo Porto.',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1AucKQhA9lfq3QHF6gc-RTdN7QEsJmvQ',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1AucKQhA9lfq3QHF6gc-RTdN7QEsJmvQ',
+  },
+  {
+    id: 'vhils',
+    name: 'Roteiro Vhils',
+    description: 'Explora intervenções de Vhils e as suas paredes esculpidas.',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1UPyYOwG5RumzNvuKClS3hU64U0K6mQg',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1UPyYOwG5RumzNvuKClS3hU64U0K6mQg',
+  },
+  {
+    id: 'mr-dheo-route',
+    name: 'Roteiro Mr. Dheo',
+    description: 'Rota pelos murais de Mr. Dheo com retratos e personagens vibrantes.',
+    iframeSrc: 'https://www.google.com/maps/d/embed?mid=1j7UY73n_VBug3ciECxVy10ASnuJ9JlU',
+    mapUrl: 'https://www.google.com/maps/d/viewer?mid=1j7UY73n_VBug3ciECxVy10ASnuJ9JlU',
   },
 ];
 
@@ -481,12 +499,19 @@ function renderEvents() {
 
     list.innerHTML = EVENTS.map(event => `
         <div class="event-card">
-            <div class="event-image-placeholder">
-                IMAGEM<br>EVENTO
-            </div>
+            ${event.image
+                ? `<img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`
+                : `<div class="event-image-placeholder">
+                        IMAGEM<br>EVENTO
+                   </div>`
+            }
             <div class="event-content">
                 <div class="event-title">${event.title}</div>
                 <div class="event-meta">${event.date} • ${event.location}</div>
+                ${event.description
+                    ? `<p class="event-description">${event.description}</p>`
+                    : ''
+                }
             </div>
         </div>
     `).join('');
